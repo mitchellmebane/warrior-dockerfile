@@ -11,7 +11,7 @@ CMD ["/sbin/my_init"]
 
 # Install dependencies
 RUN apt-get update
-RUN apt-get install -y python-pip git sudo net-tools isc-dhcp-client python-software-properties wget liblua5.1-0 python-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-pip git sudo net-tools isc-dhcp-client python-software-properties wget liblua5.1-0 python-dev
 
 # Add wget-lua binary compiled for ARM
 ADD wget-lua.raspberry /usr/bin/wget-lua
